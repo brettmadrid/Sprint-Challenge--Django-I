@@ -84,7 +84,7 @@ The steps to deploy (at a high level) are:
    16. Run './manage.py showmigrations'. Should show a migration is needed.
    17. Run './manage.py makemigrations' to prepare migration.
    18. Run './manage.py migrate' to apply migration/s.
-       a. if any models get added, make sure to go to settings.py and add the app name (name of the folder the app is in) to the INSTALLED_APPS section.
+       a. if any models get added, make sure to go to settings.py and add the app name (name of the folder the app is in) to the INSTALLED_APPS section. This is like letting App.js know about a component in a React application.
    19. Get into the inner shell inside the server by running './manage.py shell' in order to actually instantiate an object & save it to the database.
        a. 'from notes.models import Note' (replace notes and Note with desired app class model)
        b. 'n = Note(title="example", content="This is a test.") (replace data with pertinent info from a different class model as needed).
