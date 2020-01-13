@@ -98,7 +98,7 @@ The steps to deploy (at a high level) are:
    2. `ALLOWED_HOSTS` and `DATABASE_URL` are probably already correct for your local environment, but read/understand them
    3. Use the example code (you can just run it in a `python` repl) to generate a new secret key and change `SECRET_KEY`
    4. `djorg/settings.py` will need new imports (`from decouple import config` and `import dj_database_url`)
-   5. You can use `config` to load the environment variables you set above, e.g. `SECRET_KEY = config('SECRET_KEY')` (`ALLOWED_HOSTS` will be a little trickier, but that's why this is a sprint challenge!)
+   5. You can use `config` to load the environment variables you set above, e.g. `SECRET_KEY = config('SECRET_KEY')` and `ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')` Note, we add the split command if there is more than one host specified in the .env file (separated by a comma there as well)
    6. For the database, you want to both load the `DATABASE_URL` and pass it to `dj_database_url.config` (see [documentation](https://github.com/kennethreitz/dj-database-url))
    7. Make a `Procfile` ([example](https://github.com/heroku/python-getting-started/blob/master/Procfile)) to tell Heroku what to run to start your app. (Hint: the name of your Django project is probably "djorg", not "gettingstarted".)
    8. Configure `whitenoise` (add a few configuration lines to your `settings.py` file per the [documentation](http://whitenoise.evans.io/en/stable/))
