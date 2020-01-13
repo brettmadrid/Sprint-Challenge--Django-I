@@ -74,24 +74,25 @@ The steps to deploy (at a high level) are:
    6. Install django using 'pipenv install django'
    7. Run 'django-admin startproject djorg .' This creates a project. (Replace djorg with desired project name). This file is akin to the App.js in a React application.
    8. Run 'django-admin startapp notes' (or replace 'notes' with name of desired app). This file is akin to a component in a React application.
-   9. Run './manage.py runserver' to start the server. Check that it works.
-   10. Stop the server with 'ctrl-c'. Or open another terminal and get into the root shell environment with 'pipenv shell' in order to run the next two instructions.
-   11. Run './manage.py showmigrations' to reveal any unmigrated migrations.
-   12. Run './manage.py migrate' to migrate any unmigrated migrations.
-   13. Run './manage.py runserver' to start the server back up. Check that it works.
-   14. Add model to notes/models.py (or replace notes with any other app model).
-   15. Add 'notes' to INSTALLED_APPS in djorg/settings.py. Or replace notes with any other desired app.
-   16. Run './manage.py showmigrations'. Should show a migration is needed.
-   17. Run './manage.py makemigrations' to prepare migration.
-   18. Run './manage.py migrate' to apply migration/s.
+   9. Install 'pipenv install python-decouple'. Then add 'from decouple import config' to settings.py
+   10. Run './manage.py runserver' to start the server. Check that it works.
+   11. Stop the server with 'ctrl-c'. Or open another terminal and get into the root shell environment with 'pipenv shell' in order to run the next two instructions.
+   12. Run './manage.py showmigrations' to reveal any unmigrated migrations.
+   13. Run './manage.py migrate' to migrate any unmigrated migrations.
+   14. Run './manage.py runserver' to start the server back up. Check that it works.
+   15. Add model to notes/models.py (or replace notes with any other app model).
+   16. Add 'notes' to INSTALLED_APPS in djorg/settings.py. Or replace notes with any other desired app.
+   17. Run './manage.py showmigrations'. Should show a migration is needed.
+   18. Run './manage.py makemigrations' to prepare migration.
+   19. Run './manage.py migrate' to apply migration/s.
        a. if any models get added, make sure to go to settings.py and add the app name (name of the folder the app is in) to the INSTALLED_APPS section. This is like letting App.js know about a component in a React application.
-   19. Get into the inner shell inside the server by running './manage.py shell' in order to actually instantiate an object & save it to the database.
+   20. Get into the inner shell inside the server by running './manage.py shell' in order to actually instantiate an object & save it to the database.
        a. 'from notes.models import Note' (replace notes and Note with desired app class model)
        b. 'n = Note(title="example", content="This is a test.") (replace data with pertinent info from a different class model as needed).
        c. n.save() - this saves the data to the database
        d. exit() - to get out of the inner shell inside the server.
        e. Run './manage.py shell' to get back in the inner shell
-   20. Install 'pipenv install python-decouple'
+       Note: typing 'pip3 freeze' within the virtual shell will reveal all installed libraries
 6. Prepare your project
    1. Copy the `dotenv` file in this repository to `.env` in your repository (this should _not_ be checked in)
    2. `ALLOWED_HOSTS` and `DATABASE_URL` are probably already correct for your local environment, but read/understand them
