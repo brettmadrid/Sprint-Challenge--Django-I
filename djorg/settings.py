@@ -86,7 +86,7 @@ DATABASES = {
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 DATABASES['default'] = dj_database_url.parse(
-    "postgres://...", conn_max_age=600)
+    "postgres://xztjzicpiiwqfr:012abf2b26710b40fa582daf724abaec32ecac69d3581c30e5ea3e07b7e72f78@ec2-174-129-33-120.compute-1.amazonaws.com:5432/dc1vnct0e8f1ga", conn_max_age=600)
 
 
 # Password validation
