@@ -75,7 +75,7 @@ The steps to deploy (at a high level) are:
    7. Run 'django-admin startproject djorg .' This creates a project. (Replace djorg with desired project name). This file is akin to the App.js in a React application.
    8. Run 'django-admin startapp notes' (or replace 'notes' with name of desired app). This file is akin to a component in a React application.
    9. Run './manage.py runserver' to start the server. Check that it works.
-   10. Stop the server with 'ctrl-c'.
+   10. Stop the server with 'ctrl-c'. Or open another terminal and get into the root shell environment with 'pipenv shell' in order to run the next two instructions.
    11. Run './manage.py showmigrations' to reveal any unmigrated migrations.
    12. Run './manage.py migrate' to migrate any unmigrated migrations.
    13. Run './manage.py runserver' to start the server back up. Check that it works.
@@ -84,6 +84,7 @@ The steps to deploy (at a high level) are:
    16. Run './manage.py showmigrations'. Should show a migration is needed.
    17. Run './manage.py makemigrations' to prepare migration.
    18. Run './manage.py migrate' to apply migration/s.
+       a. if any models get added, make sure to go to settings.py and add the app name (name of the folder the app is in) to the INSTALLED_APPS section.
    19. Get into the inner shell inside the server by running './manage.py shell' in order to actually instantiate an object & save it to the database.
        a. 'from notes.models import Note' (replace notes and Note with desired app class model)
        b. 'n = Note(title="example", content="This is a test.") (replace data with pertinent info from a different class model as needed).
