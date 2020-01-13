@@ -90,6 +90,8 @@ The steps to deploy (at a high level) are:
        b. 'n = Note(title="example", content="This is a test.") (replace data with pertinent info from a different class model as needed).
        c. n.save() - this saves the data to the database
        d. exit() - to get out of the inner shell inside the server.
+       e. Run './manage.py shell' to get back in the inner shell
+   20. Install 'pipenv install python-decouple'
 6. Prepare your project
    1. Copy the `dotenv` file in this repository to `.env` in your repository (this should _not_ be checked in)
    2. `ALLOWED_HOSTS` and `DATABASE_URL` are probably already correct for your local environment, but read/understand them
