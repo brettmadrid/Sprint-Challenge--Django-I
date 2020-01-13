@@ -72,8 +72,8 @@ The steps to deploy (at a high level) are:
    4. `pipenv install whitenoise` - optimizes deployment of static files (you may not have any, but it's good to add this now)
    5. If using `virtualenv`, you need to create a `requirements.txt` file in your project root directory with the command: `pip freeze > requirements.txt`
    6. Install django using 'pipenv install django'
-   7. Run 'django-admin startproject djorg .' This creates a project. (Replace djorg with desired project name)
-   8. Run 'django-admin startapp notes' (or replace 'notes' with name of desired app)
+   7. Run 'django-admin startproject djorg .' This creates a project. (Replace djorg with desired project name). This file is akin to the App.js in a React application.
+   8. Run 'django-admin startapp notes' (or replace 'notes' with name of desired app). This file is akin to a component in a React application.
    9. Run './manage.py runserver' to start the server. Check that it works.
    10. Stop the server with 'ctrl-c'.
    11. Run './manage.py showmigrations' to reveal any unmigrated migrations.
